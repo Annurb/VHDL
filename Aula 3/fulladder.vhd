@@ -1,19 +1,21 @@
 library IEEE;
-use IEEE.Std_Logic_1164.all;
+  use IEEE.Std_Logic_1164.all;
+
 entity fulladder is
-port (A: in std_logic;
-B: in std_logic;
-Cin: in std_logic;
-Sum: out std_logic;
-Cout: out std_logic
-);
-end fulladder;
+  port (A    : in  std_logic;
+        B    : in  std_logic;
+        Cin  : in  std_logic;
+        Sum  : out std_logic;
+        Cout : out std_logic
+       );
+end entity;
+
 architecture circuito of fulladder is
-signal C, D, E: std_logic;
+  signal C, D, E : std_logic;
 begin
-C <= A xor B;
-Sum <= Cin xor C;
-D <= Cin and C;
-E <= A and B;
-Cout <= D or E;
-end circuito;
+  C    <= A xor B;
+  Sum  <= Cin xor C;
+  D    <= Cin and C;
+  E    <= A and B;
+  Cout <= D or E;
+end architecture;
